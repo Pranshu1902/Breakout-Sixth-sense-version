@@ -10,5 +10,9 @@
 
 # You can change the color you want the camera to detect by entering its lower and higher values
 
+# Note- Make sure that there is yellow color in your background. To help you better understand what color the camera is detecting, I have added a red dot that will appear at the center of the yellow object which the camera is able to recognize. Use that to confirm that it is detecting your object and not something from the background.
+
+## Note- I have added a 2 second delay in the beginning so that you can adjust the window size as per you. Don't think that your PC is hanging with my game.
+
 # I challenge you to win the game
 # Enjoy
