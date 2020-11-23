@@ -14,5 +14,7 @@
 
 ## Note- I have added a 2 second delay in the beginning so that you can adjust the window size as per you. Don't think that your PC is hanging with my game.
 
+# NOTE- Currently I have set the speed of ball to 5 so that you are able to get used to this game. Once you feel like you have mastered it, increase the speed to 10
+
 # I challenge you to win the game
 # Enjoy
