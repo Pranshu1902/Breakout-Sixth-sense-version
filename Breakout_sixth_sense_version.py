@@ -104,7 +104,7 @@ upper_value = np.array([40,255,255])
 
 run = True
 
-def mainloop(run, x_slider, x_ball, y_ball, x_ball_old, y_ball_old, length_of_slider, delayer):
+def mainloop(run, x_slider, x_ball, y_ball, x_ball_old, y_ball_old, length_of_slider, delayer, speed_of_ball):
     while run:
         pygame.time.delay(40)
         global vel
@@ -165,61 +165,61 @@ def mainloop(run, x_slider, x_ball, y_ball, x_ball_old, y_ball_old, length_of_sl
     
         keys = pygame.key.get_pressed()
         if keys[pygame.K_r]:
-            mainloop(True, 200, x_ball, 80, 0, 0, 100, 0)
+            mainloop(True, 200, x_ball, 80, 0, 0, 100, 0, 5)
 
         # motion of ball vertically
     
         # hitting the striker
         if y_ball == 450 and x_ball>= x_slider and x_ball < x_slider + length_of_slider:
             y_ball_old = y_ball
-            y_ball-=10
+            y_ball-=speed_of_ball
         # in between, going up
         elif y_ball<450  and y_ball > 50 and y_ball_old > y_ball:
             y_ball_old = y_ball
-            y_ball-=10
+            y_ball-=speed_of_ball
         # in between, going down
         elif y_ball < 450  and y_ball > 50 and y_ball_old < y_ball:
             y_ball_old = y_ball
-            y_ball+=10
+            y_ball+=speed_of_ball
             if x_ball_old < x_ball:
-                x_ball+=10
+                x_ball+=speed_of_ball
             else:
-                x_ball-=10
+                x_ball-=speed_of_ball
         # htting the bricks
         elif y_ball <= 50:
             y_ball_old = y_ball
-            y_ball +=10
+            y_ball +=speed_of_ball
         # going below the striker
         elif y_ball_old < y_ball and y_ball >= 450:
             y_ball_old = y_ball
-            y_ball+=10
+            y_ball+=speed_of_ball
         
         # motion of the ball horizontally
 
         # hitting the left wall 
         if x_ball - 10 < 5:
             x_ball_old = x_ball
-            x_ball+=10
+            x_ball+=speed_of_ball
         # hitting the right wall
         elif x_ball + 10 > 395:
             x_ball_old = x_ball
-            x_ball -= 10
+            x_ball -= speed_of_ball
         # hitting the striker while going right
         elif x_ball>= x_slider and x_ball < x_slider + length_of_slider and x_ball_old < x_ball:
             x_ball_old = x_ball
-            x_ball +=10
+            x_ball +=speed_of_ball
         # hitting the striker while going left
         elif x_ball>= x_slider and x_ball < x_slider + length_of_slider and x_ball_old > x_ball:
             x_ball_old = x_ball
-            x_ball -=10
+            x_ball -=speed_of_ball
         # going left in between
         elif x_ball_old > x_ball:
             x_ball_old = x_ball
-            x_ball -=10
+            x_ball -=speed_of_ball
         # going right in between
         elif x_ball_old < x_ball:
             x_ball_old = x_ball
-            x_ball+=10      
+            x_ball+=speed_of_ball      
 
         global color1
         global color2
@@ -300,4 +300,4 @@ while maingame:
             if x <= 300 and x >= 110 and y <= 60 and y >= 10:
                 dis.fill([255,255,255])
                 pygame.display.update()
-                mainloop(True, 200, x_ball, 80, 0, 0, 100, 0)
+                mainloop(True, 200, x_ball, 80, 0, 0, 100, 0, 5)
