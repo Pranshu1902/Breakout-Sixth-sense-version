@@ -16,7 +16,9 @@
 
 # NOTE- Currently I have set the speed of ball to 5 so that you are able to get used to this game. Once you feel like you have mastered it, increase the speed to 10
 
-##Warning- The game will not start until you keep the yellow(default) color in front of it.
+#Warning- The game will not start until you keep the yellow(default) color in front of it.
+
+# Download the game from https://pranshu1902.itch.io/breakout-sixth-sense-game
 
 # I challenge you to win the game
 # Enjoy
